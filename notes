@@ -1,0 +1,25 @@
+1- app.use(express.urlencoded({extended: false}))
+ANS- It is used for not allowing object like person = {name:{abc: abc}}
+2- bcrypt- bcrypt package is used for encrypting the password
+3- const hashedPassword = await bcrypt.hash(req.body.password, 10) encrypt with number 0 to 9
+4- for passport login mainly used package
+   a- passport
+   b- passport-local
+   c- express-session
+   d- express-flash -> to show the messages success or failed
+
+5- new LocalStrategy({usernameField: 'email'}) takes two parameter
+   a- the field you want to search
+   b- password by default it takes. no need to pass
+6- passport.use takes two parameter
+   a- new LocalStrategy object, 
+   b- authenticateduser
+7- done takes 3 parameter
+   a- error if not there then pass null
+   b- user  if not authenticated then pass false (optional)
+   c- message (optional)
+
+8- authenticateUser function executes in 3 steps
+   a- check email exists or not
+   b- check entered password & saved password in db is matching or not
+      if(bcrypt.compare(iput password, saved password))
